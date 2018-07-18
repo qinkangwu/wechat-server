@@ -1,0 +1,14 @@
+{
+    "apps" : [{
+      "name"        : "node-api-server",
+      "script"      : "node-api-server.js",
+      "watch"       : true,
+      "node_args"   : "--harmony",
+      "env_dev": {
+        "NODE_ENV": "dev"
+      },
+      "env_prod" : {
+         "NODE_ENV": "prod"
+      }
+    }]
+  }
