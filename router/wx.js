@@ -1,11 +1,6 @@
 const router = require('koa-router')();
+const wx = require('../controllers/wx.js');
 
-router.get('wx',async (ctx)=>{
-    console.log(ctx.query);
-    ctx.body = {
-        status : 'OK',
-        info : 'hello world'
-    }
-});
+router.get('wx',wx.checkTokenUrl);
 
 module.exports = router;

@@ -6,4 +6,5 @@ module.exports = {
         dataBase : 'qinkangwu',
         maxPool : 5
     },
+    wxCheckUrlToken : 'ztt520'
 }
