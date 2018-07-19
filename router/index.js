@@ -3,4 +3,4 @@ const wx = require('./wx.js');
 
 api.use(wx.routes());
 
-module.exports = api.use('',api.routes(),api.allowedMethods());
+module.exports = api.use('/',api.routes(),api.allowedMethods());
