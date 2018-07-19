@@ -3,6 +3,7 @@ const result = require('../lib/result');
 const sha1 = require('js-sha1');
 var hash = sha1.create();
 exports.checkTokenUrl = async ctx=>{
+    console.log(2);
     let signature = ctx.query.signature || '';
     let echostr = ctx.query.echostr || '';
     let timestamp = ctx.query.timestamp || '';
