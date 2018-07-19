@@ -1,6 +1,6 @@
 const router = require('koa-router')();
 
-router.get('info',async (ctx)=>{
+router.get('wx',async (ctx)=>{
     ctx.body = {
         status : 'OK',
         info : 'hello world'
