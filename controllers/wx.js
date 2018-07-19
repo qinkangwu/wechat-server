@@ -26,5 +26,5 @@ exports.checkTokenUrl = async ctx=>{
 }
 
 exports.getXmlDataFronWxServer = async ctx=>{
-    console.log(ctx);
+    console.log(ctx.request.body);
 }
