@@ -24,3 +24,7 @@ exports.checkTokenUrl = async ctx=>{
         ctx.body = result.fail('bad request~',403);
     }
 }
+
+exports.getXmlDataFronWxServer = async ctx=>{
+    console.log(ctx);
+}
