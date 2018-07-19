@@ -18,5 +18,9 @@ exports.checkTokenUrl = async ctx=>{
         hash.update(res);
     })
     let hashcode = hash.hex();
-    console.log(hashcode,signature);
+    if(hashcode == signature){
+        ctx.body = echostr;
+    }else{
+        ctx.body = result.fail('bad request~',403);
+    }
 }
