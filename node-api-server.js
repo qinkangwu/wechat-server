@@ -4,7 +4,8 @@ const router = require('./router');
 const logMiddleware = require('./middlewares/logMiddleware.js');
 const wxMiddle = require('./middlewares/wxDataMiddleware');
 const bodyParser = require('koa-bodyparser');
-
+const WxAccessToken = require('./lib/wxAccessToken');
+WxAccessToken.getAccessToken();
 app.use(logMiddleware());
 app.use(wxMiddle());
 app.use(bodyParser())

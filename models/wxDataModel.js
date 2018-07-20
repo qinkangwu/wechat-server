@@ -1,11 +1,13 @@
 const xml = require('../lib/xmlTool');
+const accessToken = require('../lib/wxAccessToken').accessToken;
 
-class wxModel {
+class WxModel {
     constructor(xmlData){
         if(!xmlData ) throw Error('xml数据为空');
         this.xmlObj = xmlData;
     }
     sendText(){
+        console.log(accessToken);
         return xml.jsonToXml({ 
             xml: { 
                 ToUserName: [ this.xmlObj.FromUserName[0] ],
@@ -31,4 +33,4 @@ class wxModel {
     }
 }
 
-module.exports = wxModel;
+module.exports = WxModel;

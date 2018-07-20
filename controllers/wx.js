@@ -1,8 +1,7 @@
 const config = require('../config');
 const result = require('../lib/result');
 const sha1 = require('js-sha1');
-const xml = require('../lib/xmlTool.js');
-const XmlModel = require('../models/wxModel.js');
+const XmlDataModel = require('../models/wxDataModel');
 var hash = sha1.create();
 exports.checkTokenUrl = async ctx=>{
     let signature = ctx.query.signature || '';
@@ -33,10 +32,10 @@ exports.getXmlDataFronWxServer = async ctx=>{
     let result;
     switch(msgType){
         case 'text':
-            result = new XmlModel(msg).sendText(); 
+            result = new XmlDataModel(msg).sendText(); 
             break;
         case 'image':
-            result = new XmlModel(msg).sendImg();
+            result = new XmlDataModel(msg).sendImg();
             break;
         default :
             result = 'success';
