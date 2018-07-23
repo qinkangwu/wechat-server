@@ -1,13 +1,15 @@
 const xml = require('../lib/xmlTool');
-const accessToken = require('../lib/wxAccessToken').accessToken;
-
+const getAccessToken = require('../lib/wxAccessToken');
+let instance = null;
 class WxModel {
     constructor(xmlData){
         if(!xmlData ) throw Error('xml数据为空');
         this.xmlObj = xmlData;
+        if(!instance) instance = this;
+        return instance;
     }
     sendText(){
-        console.log(accessToken);
+        let accessToken = getAccessToken.getAccessToken();
         return xml.jsonToXml({ 
             xml: { 
                 ToUserName: [ this.xmlObj.FromUserName[0] ],
