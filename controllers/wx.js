@@ -37,6 +37,10 @@ exports.getXmlDataFronWxServer = async ctx=>{
         case 'image':
             result = new XmlDataModel(msg).sendImg();
             break;
+        case 'event':
+            msg.Event[0] === 'subscribe' && (result = new XmlDataModel(msg).sendSubscribe());
+            msg.Event[0] === 'unsubscribe' && (result = new XmlDataModel(msg).sendUnsubscribe());
+            break;
         default :
             result = 'success';
     }

@@ -33,6 +33,24 @@ class WxModel {
             }
         })
     }
+    sendSubscribe(){
+        //关注事件推送
+        return xml.jsonToXml({
+            xml: { 
+                ToUserName: [ instance.xmlObj.FromUserName[0] ],
+                FromUserName: [ instance.xmlObj.ToUserName[0] ],
+                CreateTime: [ +new Date ],
+                MsgType: [ 'text' ],
+                Content: [ '欢迎关注~' ]
+            }
+        })
+    }
+    sendUnsubscribe(){
+        //取关事件推送
+        console.log('用户取消关注,openId='+instance.xmlObj.FromUserName[0]);
+        return '';
+    }
+
 }
 
 module.exports = WxModel;
