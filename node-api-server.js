@@ -5,6 +5,8 @@ const logMiddleware = require('./middlewares/logMiddleware.js');
 const wxMiddle = require('./middlewares/wxDataMiddleware');
 const bodyParser = require('koa-bodyparser');
 const WxAccessToken = require('./lib/wxAccessToken');
+let token = WxAccessToken.getAccessToken();
+!token && WxAccessToken.getAccessTokenByHttp();
 setInterval(()=>{
     WxAccessToken.getAccessTokenByHttp();
 },7200000)

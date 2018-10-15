@@ -10,6 +10,7 @@ module.exports = ()=>{
                     buf += chunk
                 })
                 ctx.req.on('end', () => {
+                    console.log(buf);
                     xml.xmlToJson(buf)
                         .then(resolve)
                         .catch(reject)
