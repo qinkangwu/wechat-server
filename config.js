@@ -1,19 +1,13 @@
 module.exports = {
-    dataBaseConf : {
-        host : '45.77.9.3',
-        user : 'qinkangwu',
-        password : 'qinkangwu',
-        dataBase : 'qinkangwu',
-        maxPool : 5
-    },
-    wxCheckUrlToken : 'ztt520',
-    wxAppSecret : '0cd70cc8c7f19cfaba8cbb4cd5779cf8',
-    wxAppId : 'wx861f5c6349dc2fba',
+    wxCheckUrlToken : 'ztt',
+    wxAppSecret : 'df717f6ae0ea2cd3aa32dd076045215b',
+    wxAppId : 'wx202d615ad7b53c21',
     wechatMenuConfig : {
         "button" : [
             {
                 "type":"click",
-                "name":"测试按钮"
+                "name":"测试按钮",
+                "key":"QKW"
             }
         ]
     }

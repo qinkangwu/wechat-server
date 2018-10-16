@@ -40,6 +40,8 @@ exports.getXmlDataFronWxServer = async ctx=>{
         case 'event':
             msg.Event[0] === 'subscribe' && (result = new XmlDataModel(msg).sendSubscribe());
             msg.Event[0] === 'unsubscribe' && (result = new XmlDataModel(msg).sendUnsubscribe());
+            msg.Event[0] === 'CLICK' && msg.EventKey[0] === 'QKW' && (msg.Content = ['点击测试按钮']);
+            msg.Event[0] === 'CLICK' && msg.EventKey[0] === 'QKW' && (result = new XmlDataModel(msg).sendText());
             break;
         default :
             result = 'success';
